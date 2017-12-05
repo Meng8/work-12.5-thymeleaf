@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+ 	<form action="thy/change" th:object="${user}">
+			
+			编号:<input type="text" th:if="${id}!=0" th:value="${user.id}" th:field="*{id}" />
+				<input type="text" th:if="${id}==0" name="id" /> 
+	 		姓名：<input type="text" th:if="${id}!=0" th:value="${user.name}" th:field="*{name}" />
+	 			<input type="text" th:if="${id}==0" name="name" />
+			年龄<input type="text" th:if="${id}!=0" th:value="${user.age}" th:field="*{age}" />
+				<input type="text" th:if="${id}==0" name="age" />
+			性别： 男<input type="radio" th:if="${id}!=0" value="男" th:field="*{sex}" />
+					<input type="radio" th:if="${id}==0" value="男" name="sex" />
+				女<input type="radio" th:if="${id}!=0" value="女" th:field="*{sex}" /> 
+					<input type="radio" th:if="${id}==0" value="男" name="sex" />
+		<input type="submit" value="提交" />
+	</form>  
+	
+</body>
+</html>

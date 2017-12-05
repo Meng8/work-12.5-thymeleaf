@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<script type="text/javascript" th:src="@{webjars/jquery/3.2.1/jquery.js}"></script>
+<title>Insert title here</title>
+<script th:inline="javascript">
+	
+	function addtable(){
+		
+		
+	}
+</script> 
+<style type="text/css">
+			table{
+		width: 50%;
+		text-align: center;
+		border-collapse: collapse;
+		}
+	          td{
+			border:1px solid grey;
+		}
+</style>
+</head>
+<body>
+<a th:href="@{/thy/adduser}">新增</a>
+<table border="1">
+<tr>
+ <th>编号</th>
+ <th>姓名</th>
+ <th>性别</th>
+ <th>年龄</th>
+ <th>编辑</th>
+</tr>
+ <span th:if="${usermap}">
+ <tr th:each="User:${usermap}">
+ <td th:text="${User.value.id}"></td>
+ <td th:text="${User.value.name}"></td>
+ <td th:text="${User.value.size}"></td>
+ <td th:text="${User.value.age}"></td>
+ <td><a th:href="@{/thy/update}">编辑</a></td>
+</tr>
+ </span>   
+
+</table>
+<div>
+ </div>
+</body>
+</html>

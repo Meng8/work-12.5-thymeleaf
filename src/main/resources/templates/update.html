@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<script type="text/javascript" th:src="@{webjars/jquery/3.2.1/jquery.js}"></script>
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="thy/update" th:object="${user}">
+<table>
+<tr>
+<td>编号</td>
+<td><input type="text" name="id" th:value="${user.id}" th:field="*{id}"/></td>
+</tr>
+<tr>
+<td>姓名：</td>
+<td><input type="text" name="name" th:value="${user.name}" th:field="*{name}"/></td>
+</tr>
+<tr>
+<td>性别</td>
+<td><input type="radio" value="男" th:value="${user.size}"/>
+<input type="radio" value="女" th:value="${user.size}"/>
+</td>
+</tr>
+<tr>
+<td>年龄</td>
+<td><input type="text" th:value="${user.age}" th:field="*{age}"/></td>
+</tr>
+
+</table>
+</form>
+
+</body>
+</html>
+
+
